@@ -1,0 +1,33 @@
+install.packages('quantmod', dependancies=TRUE)
+library("quantmod")
+getSymbols("AAPL")
+barChart(AAPL)
+barChart(AAPL, subset='last 28 days')
+getSymbols("MSFT")
+chartSeries(MSFT)
+addMACD()
+addBBands()
+chartSeries(MSFT, subset='last 60 days')
+addMACD()
+addBBands()
+summary(MSFT)
+summary(beaver1)
+cor(beaver1)
+install.packages('BatchGetSymbols')
+# set dates
+first.date<-Sys.Date()-60
+last.date<-Sys.Date
+freq.data<-'daily'
+tickers<-("MSFT", "AAPL", "SPY")
+df.SP500<-GetSP500Stocks()
+tickers<-df.SP500$tickers
+setwd("/Users/jamescampbell/education/linkedin/algo-trading")
+View(X03_05_Start_R)
+linearMod<- lm(Cash ~ EBITDA, data=03_05_Start_R)
+getwd()
+install.packages("readxl")
+library("readxl")
+my_data <- read_excel("03_05_Start_R.xlsx")
+View(my_data)
+linearMod<- lm(Cash ~ EBITDA, data=my_data)
+print(linearMod)
